@@ -122,6 +122,16 @@
 
   (monte-carlo trials experiment))
 
+					; Ex 3.7
+(define (make-joint acc original_pass third_pass)
 
-	   
+  (define (dispatch password m)
+    (if (eq? password third_pass)
+	(acc original_pass m)
+	(error "Incorrect password for joint account!")
+	)
+    )
+
+  dispatch
   
+  )
