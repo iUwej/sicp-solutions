@@ -1,4 +1,4 @@
-
+; function to calculate derivates for basic expressions
 
 (define (deriv exp var)
 	(cond ((number? exp) 0)
