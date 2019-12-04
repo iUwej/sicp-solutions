@@ -9,4 +9,35 @@
 ;;   (
 ;;   )
 
+;return the last pair in  a list
+(define (last-pair x)
+  (if (null? (cdr x))
+      x
+      (last-pair (cdr x))
+      ))
 
+;create a cycle in a list
+(define (make-cycle x)
+  (set-cdr! (last-pair x) x)
+  x)
+
+;buggy count -pairs
+(define (count-pairs x)
+  (if (not (pair? x))
+      0
+      (+ (count-pairs (car x)) (count-pairs (cdr x)) 1)))
+
+
+(define (member? item ylist)
+  (cond ((null? ylist)
+	 #f
+	 )
+	((eq? (car ylist) item)
+	 #t
+	 )
+	(else (member? item (cdr ylist))))
+  )
+
+(define (count-unique-pairs xlist yset)
+  0
+  )
