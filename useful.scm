@@ -22,7 +22,7 @@
   x)
 
 ;buggy count -pairs
-(define (count-pairs x)
+(define (buggy-count-pairs x)
   (if (not (pair? x))
       0
       (+ (count-pairs (car x)) (count-pairs (cdr x)) 1)))
@@ -39,5 +39,12 @@
   )
 
 (define (count-unique-pairs xlist yset)
-  0
+  (cond
+   ((not (pair? xlist)) 0)
+   ((member? xlist yset) 0)
+   (else
+    (+ (count-unique-pairs (car xlist) (cons xlist yset))
+       (count-unique-pairs (cdr xlist)(cons xlist yset))
+       1))
+   )
   )
