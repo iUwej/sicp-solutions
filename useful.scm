@@ -38,6 +38,10 @@
 	(else (member? item (cdr ylist))))
   )
 
+					;should the yset be shared?
+					; to change this to pass same yset to recursion calls
+
+
 (define (count-unique-pairs xlist yset)
   (cond
    ((not (pair? xlist)) 0)
@@ -47,4 +51,10 @@
        (count-unique-pairs (cdr xlist)(cons xlist yset))
        1))
    )
+  )
+
+
+(define (count-pairs xlist)
+  
+  
   )
